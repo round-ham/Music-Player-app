@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity">
+
+    <ImageView
+        android:id="@+id/bgAlbumArt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/circle_bg"
+        android:padding="8dp"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_keyboard_arrow_left" />
+
+    <ImageView
+        android:id="@+id/favBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/circle_bg"
+        android:padding="12dp"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_favorite_border" />
+
+    <ImageView
+        android:id="@+id/ImageAlbumArtPlayer"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/circle_bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favBtn" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageAlbumArtPlayer" />
+
+    <TextView
+        android:id="@+id/textArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/artist"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <com.frolo.waveformseekbar.WaveformSeekBar
+        android:id="@+id/waveformSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textArtist"
+        app:waveProgressColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textElapsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="0:00"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waveformSeekBar" />
+
+    <TextView
+        android:id="@+id/textDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="0:00"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/waveformSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/waveformSeekBar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/bgAlbumArt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/BtnRepeat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            app:tint="@color/white"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_repeat_one" />
+
+        <ImageButton
+            android:id="@+id/BtnPreV"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:tint="@color/white"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_skip_previous" />
+
+        <ImageButton
+            android:id="@+id/BtnPlayPause"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/white_bg"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:srcCompat="@drawable/ic_play_arrow" />
+
+        <ImageButton
+            android:id="@+id/BtnNext"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:tint="@color/white"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_skip_next" />
+
+        <ImageButton
+            android:id="@+id/BtnShuffle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="20dp"
+            app:tint="@color/white"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_shuffle" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
